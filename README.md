@@ -70,9 +70,3 @@ This guide explains how to run the **Bank Customer Churn Prediction** project us
 2. **Run `03_FEATURE_VIEW_BANK_CHURN.ipynb`**: Create feature views in Snowflake for training the model.
 3. **Run `04_TRAINING_BANK_CHURN.ipynb`**: Train the **XGBClassifier** model.
 4. **Run `05_INFERING_BANK_CHURN.ipynb`**: Make predictions using the trained model.
-
-## Step 3: Monitor and Evaluate
-- Monitor model performance and adjust hyperparameters as needed.
-
-## Conclusion
-Follow these steps to execute the churn prediction model within Snowflake Notebooks, leveraging Snowflake’s data management and machine learning capabilities.
