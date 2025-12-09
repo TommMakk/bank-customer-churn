@@ -2,9 +2,18 @@
 
 ## Project Overview
 
-This repository contains a machine learning model for predicting customer churn in the banking sector. The project utilizes a dataset of bank customers, including various features like demographic information, account details, and financial data, to identify whether a customer will churn (leave the bank).
+This repository contains a machine learning model for predicting customer churn in the banking sector. The project uses a dataset of bank customers, including various features like demographic information, account details, and financial data, to predict whether a customer will churn (leave the bank).
 
-The project leverages **Snowflake** for data management, feature engineering, and machine learning lifecycle management, utilizing **Snowflake ML** for seamless integration of model training, deployment, and inference. Snowflake’s features like **Role-based Access Control (RBAC)**, **Data Sharing**, and **Snowflake ML** help manage data securely and build robust ML models at scale.
+The project leverages **Snowflake** for data management, feature engineering, and machine learning lifecycle management, utilizing **Snowflake ML** to streamline the process of model training, deployment, and inference. Snowflake’s features like **Role-based Access Control (RBAC)** and **Snowflake ML** provide a secure and scalable environment to build and manage machine learning models.
+
+### Key Highlights:
+- **Data Management**: Snowflake is used for storing and processing data, ensuring secure access and scalability.
+- **Feature Engineering**: Feature views are created in Snowflake to transform and prepare data for training.
+- **Machine Learning Pipeline**: Snowflake ML facilitates the full lifecycle of the model, including data processing, training, model management, and deployment.
+- **Model Selection**: The **XGBClassifier** (XGBoost Classifier) is used to predict customer churn, achieving an accuracy of **87%**.
+- **Model Registry**: Snowflake ML includes model registry functionality for versioning, tracking, and managing multiple models.
+
+This project demonstrates the seamless integration of Snowflake's tools to build a scalable and maintainable churn prediction system, from feature engineering to real-time inference.
 
 ## Project Files
 
