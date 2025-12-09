@@ -22,8 +22,6 @@ This project demonstrates the seamless integration of Snowflake's tools to build
   - **Medium Risk**: Predicted churn likelihood between 0.3 and 0.6
   - **High Risk**: Predicted churn likelihood between 0.6 and 1
 
-  **SMOTE (Synthetic Minority Over-sampling Technique)** was applied to address the higher number of incorrect predictions for **Medium Risk** and **High Risk** categories. These customers were prone to higher percentages of false positives, suggesting that balancing the classes would improve model performance.
-
   ![Feature Importance for High Risk Clients](images/feature_importance_high_risk.png)
 
 - **Feature Importance**: 
@@ -31,10 +29,7 @@ This project demonstrates the seamless integration of Snowflake's tools to build
   
   ![Prediction Accuracy](images/prediction_accurary.png)
 
-## Conclusion
-This project successfully integrates **Snowflake ML** for managing the entire machine learning lifecycle from data preparation to model training and inference. By applying advanced techniques like **SMOTE** and analyzing feature importance, the model provides valuable insights into customer churn predictions, especially for high-risk customers.
-
-
+- **Accuracy and SMOTE**: As seen in the **Prediction Accuracy** chart, the model's accuracy is not as high for **Medium Risk** and **High Risk** customers. These categories tend to have a higher percentage of incorrect predictions (false positives), indicating an imbalanced dataset. To address this, **SMOTE** should be addressed to balance the dataset, improving the model's performance for these high-risk groups.
 
 ## Project Files
 
