@@ -15,6 +15,27 @@ The project leverages **Snowflake** for data management, feature engineering, an
 
 This project demonstrates the seamless integration of Snowflake's tools to build a scalable and maintainable churn prediction system, from feature engineering to real-time inference.
 
+## Key Insights
+
+- **Risk Categories**: Customers were categorized into three risk groups based on the likelihood of churn:
+  - **Low Risk**: Predicted churn likelihood between 0 and 0.3
+  - **Medium Risk**: Predicted churn likelihood between 0.3 and 0.6
+  - **High Risk**: Predicted churn likelihood between 0.6 and 1
+
+  **SMOTE (Synthetic Minority Over-sampling Technique)** was applied to address the higher number of incorrect predictions for **Medium Risk** and **High Risk** categories. These customers were prone to higher percentages of false positives, suggesting that balancing the classes would improve model performance.
+
+  ![Feature Importance for High Risk Clients](images/feature_importance_high_risk.png)
+
+- **Feature Importance**: 
+  - **Number of Bank Products**, **Customer Age**, and **Estimated Salary** were found to be the most influential features for predicting churn in **High Risk** clients.
+  
+  ![Prediction Accuracy](images/prediction_accurary.png)
+
+## Conclusion
+This project successfully integrates **Snowflake ML** for managing the entire machine learning lifecycle from data preparation to model training and inference. By applying advanced techniques like **SMOTE** and analyzing feature importance, the model provides valuable insights into customer churn predictions, especially for high-risk customers.
+
+
+
 ## Project Files
 
 - **01_INITIATION_BANK_CHURN.ipynb**: Creates necessary roles, warehouses, and database objects in Snowflake to support the project.
