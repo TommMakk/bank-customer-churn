@@ -46,31 +46,33 @@ The dataset, **Customer_Churn_Analysis.csv**, contains the following columns:
 | **SalaryEstimated** | Estimated salary of the customer                                             |
 | **Churned**         | Target variable (1 = Customer has churned, 0 = Customer has not churned)     |
 
-## Snowflake Integration
+# Step-by-Step Guide to Running Bank Customer Churn Prediction in Snowflake
 
-### 01_INITIATION_BANK_CHURN.ipynb
+This guide explains how to run the **Bank Customer Churn Prediction** project using **Snowflake Notebooks**.
 
-This notebook sets up the necessary roles, warehouses, and database objects in **Snowflake** to support the project. It includes creating:
+## Prerequisites
+- Access to a **Snowflake account** and **Snowflake Notebooks**.
+- Appropriate **roles and permissions** to create and manage Snowflake objects.
 
-- **Roles**: Define user roles with specific privileges to ensure proper access control and secure handling of data.
-- **Warehouses**: Establish virtual warehouses for running queries and ML operations.
-- **Databases and Schemas**: Create databases and schemas to organize and store the project data and model artifacts.
-  
-Snowflake uses **Role-based Access Control (RBAC)** to manage permissions effectively. The required roles might include:
+## Step 1: Set Up Snowflake Environment
+1. **Import Notebooks**: Import the following notebooks into **Snowflake Notebooks**:
+   - `01_INITIATION_BANK_CHURN.ipynb`
+   - `02_EDA_BANK_CHURN.ipynb`
+   - `03_FEATURE_VIEW_BANK_CHURN.ipynb`
+   - `04_TRAINING_BANK_CHURN.ipynb`
+   - `05_INFERING_BANK_CHURN.ipynb`
+   
+2. **Run `01_INITIATION_BANK_CHURN.ipynb`**:
+   - This notebook creates the required **roles**, **warehouses**, and **database objects** for the project.
 
-- `DATA_SCIENTIST_ROLE`: For users responsible for training and testing machine learning models.
-- `DATA_ENGINEER_ROLE`: For users performing ETL and data manipulation tasks.
-- `ML_MODEL_ADMIN_ROLE`: For administering machine learning models within Snowflake.
-  
-**Example**:
+## Step 2: Run Notebooks in Sequence
+1. **Run `02_EDA_BANK_CHURN.ipynb`**: Perform exploratory data analysis (EDA) on the dataset.
+2. **Run `03_FEATURE_VIEW_BANK_CHURN.ipynb`**: Create feature views in Snowflake for training the model.
+3. **Run `04_TRAINING_BANK_CHURN.ipynb`**: Train the **XGBClassifier** model.
+4. **Run `05_INFERING_BANK_CHURN.ipynb`**: Make predictions using the trained model.
 
-```sql
--- Creating necessary roles for the project
-CREATE ROLE IF NOT EXISTS data_scientist_role;
-CREATE ROLE IF NOT EXISTS data_engineer_role;
-CREATE ROLE IF NOT EXISTS ml_model_admin_role;
+## Step 3: Monitor and Evaluate
+- Monitor model performance and adjust hyperparameters as needed.
 
--- Granting privileges to the roles
-GRANT USAGE ON WAREHOUSE my_warehouse TO ROLE data_scientist_role;
-GRANT SELECT ON DATABASE my_database TO ROLE data_engineer_role;
-GRANT CREATE MODEL ON DATABASE my_database TO ROLE ml_model_admin_role;
+## Conclusion
+Follow these steps to execute the churn prediction model within Snowflake Notebooks, leveraging Snowflake’s data management and machine learning capabilities.
